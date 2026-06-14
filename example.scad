@@ -5,7 +5,7 @@ $vpt = [0, 0, 75];
 $vpr = [45, 0, 45];
 $vpd = 700;
 
-is_prod = true;
+is_prod = false;
 sweep_step = is_prod ? 1 : 10;
 $fn = is_prod ? 128 : 60;
 

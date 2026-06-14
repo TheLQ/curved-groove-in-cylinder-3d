@@ -64,7 +64,6 @@ module wavey(
             padding=padding,
             angle=angle,
             height=slot_range,
-            tunable_dwell=tunable_dwell,
           ),
         ]
       )
@@ -80,7 +79,6 @@ module wavey(
             padding=padding,
             angle=angle + sweep_step,
             height=slot_range,
-            tunable_dwell=tunable_dwell
           ),
         ]
       )
