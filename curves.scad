@@ -1,6 +1,6 @@
 // simple longer peak
-curve_slowed_peak = function(padding, angle, height)
-padding + (
+curve_slowed_peak = function(angle, height)
+(
   height * (
     0.5 // move from center
     + (

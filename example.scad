@@ -9,28 +9,17 @@ is_prod = false;
 sweep_step = is_prod ? 1 : 10;
 $fn = is_prod ? 128 : 60;
 
-rotate([7, -30, 90])
-  wavey_grove(
-    shell_height=150,
-    shell_radius=50,
-    // split
-    shell_wall=20,
-    // inner groove
-    //  shell_wall = 10
-    //
-    slot_padding=5,
-    slot_range=75,
-    thickness=50,
-    // split
-    slot_depth=10,
-    // inner groove
-    //  slot_depth = 5,
-    curve_function=curve_slowed_peak,
-    sweep_step=sweep_step,
-    //
-    extra_shell=0.5,
-    extra_slices=0.1,
-  );
+wavey(
+  padding=0,
+  slot_range=75,
+  radius=75,
+  thickness=50,
+  depth=10,
+  curve_function=curve_slowed_peak,
+  sweep_step=sweep_step,
+  //
+  extra=0.1,
+);
 
 // inner groove with new shell_wall and slot_depth
 for (rotation = [0, 90]) {

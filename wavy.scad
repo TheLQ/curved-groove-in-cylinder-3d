@@ -55,37 +55,43 @@ module wavey(
   extra,
 ) {
   for (angle = [0:sweep_step:360]) {
-    hull() {
-      translate(
-        [
-          cos(angle) * radius,
-          sin(angle) * radius,
-          curve_function(
-            padding=padding,
-            angle=angle,
-            height=slot_range,
-          ),
-        ]
-      )
-        rotate([0, 0, angle])
-          linear_extrude(height=thickness)
-            square([depth, extra]);
+    color(
+      let (
+        hei = curve_function(
+          angle=angle,
+          height=1,
+        )
+      ) (hei > .5) ? [0, hei, hei] : [hei, hei, 240 / 255]
+    )
+      hull() {
+        translate(
+          [
+            cos(angle) * radius,
+            sin(angle) * radius,
+            padding + curve_function(
+              angle=angle,
+              height=slot_range,
+            ),
+          ]
+        )
+          rotate([0, 0, angle])
+            linear_extrude(height=thickness)
+              square([depth, extra]);
 
-      translate(
-        [
-          cos(angle + sweep_step) * radius,
-          sin(angle + sweep_step) * radius,
-          curve_function(
-            padding=padding,
-            angle=angle + sweep_step,
-            height=slot_range,
-          ),
-        ]
-      )
-        rotate([0, 0, angle + sweep_step])
-          linear_extrude(height=thickness)
-            square([depth, extra]);
-    }
+        translate(
+          [
+            cos(angle + sweep_step) * radius,
+            sin(angle + sweep_step) * radius,
+            padding + curve_function(
+              angle=angle + sweep_step,
+              height=slot_range,
+            ),
+          ]
+        )
+          rotate([0, 0, angle + sweep_step])
+            linear_extrude(height=thickness)
+              square([depth, extra]);
+      }
   }
 }
 
