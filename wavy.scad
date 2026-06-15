@@ -61,7 +61,9 @@ module wavey(
           angle=angle,
           height=1,
         )
-      ) (hei > .5) ? [0, hei, hei] : [hei, hei, 240 / 255]
+      )
+      //  (hei > .5) ? [0, hei, hei] : [hei, hei, 240 / 255]
+      [1 - (hei * 0.5), 18 / 255, (hei * 1)]
     )
       hull() {
         translate(
