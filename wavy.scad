@@ -1,15 +1,15 @@
 // shell_height 
-// shell_radius
-// shell_wall
+// shell_radius - inner radius
+// shell_wall - if < slot_depth, the cylinder is cut in half
 // 
 // slot_padding - offset from start of cylinder
 // slot_range - range of the first wall of the groove
-// thickness
+// thickness - between outside walls of slot
 // slot_depth
-// curve_function - (padding, angle, height, tunable_dwell)
-// sweep_step - prod: 1 degree slices, dev: 10 degree slices
+// curve_function - function(angle, slot_range) -> groove_height 
+// sweep_step - slices in 360 degrees
 //
-// todo: depending on size, required to remove all inside intersection
+// tolerance required to remove remaining edges
 // extra_shell
 // extra_slices
 module wavey_grove(shell_height, shell_radius, shell_wall, slot_padding, slot_range, thickness, slot_depth, curve_function, sweep_step, extra_shell, extra_slices) {
@@ -59,7 +59,7 @@ module wavey(
       let (
         hei = curve_function(
           angle=angle,
-          height=1,
+          slot_range=1,
         )
       )
       //  (hei > .5) ? [0, hei, hei] : [hei, hei, 240 / 255]
@@ -72,7 +72,7 @@ module wavey(
             sin(angle) * radius,
             padding + curve_function(
               angle=angle,
-              height=slot_range,
+              slot_range=slot_range,
             ),
           ]
         )
@@ -86,7 +86,7 @@ module wavey(
             sin(angle + sweep_step) * radius,
             padding + curve_function(
               angle=angle + sweep_step,
-              height=slot_range,
+              slot_range=slot_range,
             ),
           ]
         )
