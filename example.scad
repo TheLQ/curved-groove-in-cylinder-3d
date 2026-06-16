@@ -1,9 +1,9 @@
 include <wavy.scad>;
 include <curves.scad>;
 
-$vpt = [0, 100, 0];
+$vpt = [100, 0, 110];
 $vpr = [45, 0, 45];
-$vpd = 1100;
+$vpd = 925;
 
 is_prod = false;
 sweep_step = is_prod ? 1 : 10;
