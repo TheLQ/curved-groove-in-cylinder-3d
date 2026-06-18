@@ -17,7 +17,7 @@ translate([0, 200, 0])
       radius=75,
       thickness=50,
       depth=10,
-      curve_function=curve_slowed_peak,
+      curve_function=curve_simple_sin,
       sweep_step=sweep_step,
       //
       extra=0.1,
@@ -34,7 +34,7 @@ translate([0, 0, 0])
       slot_range=75,
       thickness=50,
       slot_depth=50,
-      curve_function=curve_slowed_peak,
+      curve_function=curve_simple_sin,
       sweep_step=sweep_step,
       //
       extra_shell=0.5,
@@ -52,7 +52,26 @@ translate([200, 0, 0])
       slot_range=75,
       thickness=200, // extra thick to remove top
       slot_depth=50,
-      curve_function=curve_slowed_peak,
+      curve_function=curve_simple_sin,
+      sweep_step=sweep_step,
+      //
+      extra_shell=0.5,
+      extra_slices=0.1,
+    );
+
+// lol
+translate([-55, 55, 140])
+  rotate([0, 0, 90])
+    wavey_grove(
+      shell_height=70,
+      shell_radius=30,
+      shell_wall=20,
+      //
+      slot_padding=5,
+      slot_range=40,
+      thickness=30,
+      slot_depth=30,
+      curve_function=curve_strange,
       sweep_step=sweep_step,
       //
       extra_shell=0.5,

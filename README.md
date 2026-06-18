@@ -5,10 +5,10 @@ Generates a continuous pin in slot cam groove onto a cylinder using your motion 
 Export into your modeling software. 
 
 A formula like sin(x) is more elegant than splines or jerky turns.
-Autodesk Fusion requires [this clumsy process](https://www.youtube.com/watch?v=6ZrHVjxzBK8) to 
-extrude onto the surface of a cylinder.
-then remove the last 1 degree nib.
-Yet the groove walls are not aligned with the bearing.
+In Autodesk Fusion this shape is impossible to make. [While this clumsy process](https://www.youtube.com/watch?v=6ZrHVjxzBK8) will
+extrude onto the surface of a cylinder,
+the groove walls are not aligned with the bearing.
+And leaves a 1 degree nib to cleanup because Emboss is not a 360 degree operation.
 
 Next, sliding joint motion tangent to the groove, the bearing,
 is unreliable especially over multiple faces.

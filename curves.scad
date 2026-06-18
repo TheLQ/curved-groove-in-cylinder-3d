@@ -14,3 +14,18 @@ curve_slowed_peak = function(angle, slot_range)
     )
   )
 );
+
+// simple continous wave
+curve_simple_sin = function(angle, slot_range)
+slot_range * (
+  0.5 + sin(angle) / 2
+);
+
+// simple continous wave
+curve_strange = function(angle, slot_range)
+slot_range * (
+  0.5 + sin(8 * angle) / 2
+);
+
+// simpler longer peak opposite curve
+// todo: I don't know how else to do this besides working derivative on paper
