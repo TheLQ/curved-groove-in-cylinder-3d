@@ -4,7 +4,16 @@ Curved Groove in Cylinder 3d Model
 Generates a continuous pin in slot cam groove onto a cylinder using your motion formula in OpenSCAD. 
 Export into your modeling software. 
 
+Extruded as a series of outward facing cylinders in the groove
+representing the bearing sliding.
+Offset from the bottom using your formula.
+Without extra input calculus nor using innaccurate simple Z-offset,
+correctly creates outer and inner walls which have different curves.
+
+## Impossible in Fusion
+
 A formula like sin(x) is more elegant than splines or jerky turns.
+
 In Autodesk Fusion this shape is impossible to make. [While this clumsy process](https://www.youtube.com/watch?v=6ZrHVjxzBK8) will
 extrude onto the surface of a cylinder,
 the groove walls are not aligned with the bearing.
@@ -15,9 +24,6 @@ is unreliable especially over multiple faces.
 This groove tends to render as a 1 or 2 faces.
 In Fusion, recommend jointing a sphere to the faces.
 Alternatively, use your motion formula to simulate joints in something like [pyjoints](https://github.com/phorton1/fusionAddIns-pyJoints).
-
-* TODO: Switch slot thickness from Z height to proper 
-perpendicular to surface.
 
 ![](example.png)
 

@@ -23,6 +23,7 @@ translate([0, 200, 0])
       extra=0.1,
     );
 
+// central
 translate([0, 0, 0])
   rotate([0, 0, 0])
     wavey_grove(
@@ -44,13 +45,13 @@ translate([0, 0, 0])
 translate([200, 0, 0])
   rotate([0, 0, 90])
     wavey_grove(
-      shell_height=150,
+      shell_height=100,
       shell_radius=50,
       shell_wall=20,
       //
       slot_padding=5,
       slot_range=75,
-      thickness=200, // extra thick to remove top
+      thickness=100, // extra thick to remove top
       slot_depth=50,
       curve_function=curve_simple_sin,
       sweep_step=sweep_step,
@@ -69,7 +70,7 @@ translate([-55, 55, 140])
       //
       slot_padding=5,
       slot_range=40,
-      thickness=30,
+      thickness=10,
       slot_depth=30,
       curve_function=curve_strange,
       sweep_step=sweep_step,

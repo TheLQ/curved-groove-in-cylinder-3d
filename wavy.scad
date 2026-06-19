@@ -21,10 +21,10 @@ module wavey_grove(shell_height, shell_radius, shell_wall, slot_padding, slot_ra
       extra=extra_slices,
     );
     wavey(
-      padding=slot_padding,
-      radius=shell_radius - extra_shell,
+      padding=slot_padding + (thickness / 2),
+      radius=shell_radius - extra_shell - (thickness / 2),
       thickness=thickness,
-      depth=slot_depth,
+      depth=slot_depth + (thickness / 2),
       slot_range=slot_range,
       extra=extra_slices,
       curve_function=curve_function,
@@ -76,9 +76,8 @@ module wavey(
             ),
           ]
         )
-          rotate([0, 0, angle])
-            linear_extrude(height=thickness)
-              square([depth, extra]);
+          rotate([0, 90, angle])
+            cylinder(h=depth, r=thickness / 2);
 
         translate(
           [
@@ -90,9 +89,8 @@ module wavey(
             ),
           ]
         )
-          rotate([0, 0, angle + sweep_step])
-            linear_extrude(height=thickness)
-              square([depth, extra]);
+          rotate([0, 90, angle + sweep_step])
+            cylinder(h=depth, r=thickness / 2);
       }
   }
 }
